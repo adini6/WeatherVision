@@ -1,5 +1,27 @@
 $(document).ready(function() {
+  
   var myKey = '9272493ac4cba0ac888e369631f62646';
+      // Functions for Search History
+      function addToSearchHistory(city) {
+        var history = JSON.parse(localStorage.getItem('cityHistory')) || [];
+
+        if (history.indexOf(city) === -1) {
+            history.push(city);
+            localStorage.setItem('cityHistory', JSON.stringify(history));
+        }
+        displaySearchHistory();
+    }
+
+    function displaySearchHistory() {
+        var history = JSON.parse(localStorage.getItem('cityHistory')) || [];
+        $('.list-group').empty(); 
+        history.forEach(function(city) {
+            var cityItem = $('<a>').addClass('list-group-item list-group-item-action').text(city);
+            $('.list-group').prepend(cityItem);  
+        });
+    }
+
+    displaySearchHistory();
 
   $('#search-btn').on('click', function(event) {
       event.preventDefault();
