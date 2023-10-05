@@ -35,8 +35,8 @@ $(document).ready(function() {
           method: 'GET'
       }).then(function(response) {
           if (response && response.list) {
-              var listArray = response.list;
-
+            var listArray = response.list.filter(item => item.dt_txt.includes("12:00:00"));
+            
               // removes existing forecast cards before adding new ones
               $('.five-day-card').remove();
 
