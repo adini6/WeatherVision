@@ -68,7 +68,7 @@ $(document).ready(function() {
                   var currentDate = moment().add(dispDay, 'days').format('MM/DD/YYYY');
 
                   // Create Bootstrap cards
-                  var card = $('<div>').addClass('card five-day-card mx-3').css("width", "12rem");
+                  var card = $('<div>').addClass('card five-day-card col-lg-2');
                   var cardBody = $('<div>').addClass('card-body');
                   var cardTitle = $('<h5>').addClass('card-title').text(currentDate);
                   var weatherIcon = $('<img>').attr('src', 'http://openweathermap.org/img/w/' + element.weather[0].icon + '.png');

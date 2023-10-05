@@ -11,12 +11,12 @@
 </head>
 <body>
 
-<h1>Weather Dashboard</h1>
-<div class="container mt-4">
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Weather Dashboard</h1>
   <!-- Main Row -->
   <div class="row">
       <!-- City Search Column -->
-      <div class="col-3">
+      <div class="col-lg-3">
           <h4>Search for a City:</h4>
           <div class="input-group mb-3">
               <input type="text" id="user-input" class="form-control" placeholder="City name...">
@@ -25,14 +25,13 @@
               </div>
           </div>
           <!-- List of cities -->
-          <div class="list-group">
-              <a href="#" class="list-group-item list-group-item-action">San Diego</a>
+          <div class="list-group" id="search-history">
+            <!--search history-->
           </div>
       </div>
 
       <!-- Weather Display Column -->
-      <div class="col-9">
-          <h2>Weather Dashboard</h2>
+      <div class="col-lg-9">
           <h4 id="city-name">City</h4>
           <!-- Current Weather -->
           <p id="temperature">Temperature: </p>
