@@ -31,7 +31,7 @@ $(document).ready(function() {
           forecastFiveDays(userInput);
       }
   });
-
+//function for current weather
   function getCurrentWeather(city) {
       var currentWeatherCall = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&APPID=' + myKey + '&units=imperial';
       $.ajax({
@@ -39,17 +39,18 @@ $(document).ready(function() {
           method: 'GET'
       }).then(function(response) {
           if (response && response.name) {
-              $('#city-name').text(response.name + " (" + moment().format('MM/DD/YYYY HH:mm:ss') + ")");
+              $('#city-name').text(response.name + " (" + moment().format('MM/DD/YYYY ') + ")");
               $('#weather-icon').attr('src', 'http://openweathermap.org/img/w/' + response.weather[0].icon + '.png');
               $('#temperature').text('Temperature: ' + response.main.temp + '°F');
               $('#humidity').text('Humidity: ' + response.main.humidity + '%');
               $('#wind-speed').text('Wind Speed: ' + response.wind.speed + ' MPH');
+              addToSearchHistory(response.name);
           } else {
               console.log('Invalid API response');
           }
       });
   }
-
+//function for five day forecase
   function forecastFiveDays(city) {
       var fiveDayCall = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&APPID=' + myKey + '&units=imperial';
       $.ajax({
@@ -89,4 +90,11 @@ $(document).ready(function() {
           }
       });
   }
+  $(document).on('click', '.list-group-item', function() {
+    var clickedCity = $(this).text();
+    getCurrentWeather(clickedCity);
+    forecastFiveDays(clickedCity);
 });
+});
+  
+
