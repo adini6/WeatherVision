@@ -40,7 +40,7 @@ $(document).ready(function() {
       }).then(function(response) {
           if (response && response.name) {
               $('#city-name').text(response.name + " (" + moment().format('MM/DD/YYYY ') + ")");
-              $('#weather-icon').attr('src', 'http://openweathermap.org/img/w/' + response.weather[0].icon + '.png');
+              $('#weather-icon').attr('src', 'http://openweathermap.org/img/wn/' + response.weather[0].icon + '.png');
               $('#temperature').text('Temperature: ' + response.main.temp + '°F');
               $('#humidity').text('Humidity: ' + response.main.humidity + '%');
               $('#wind-speed').text('Wind Speed: ' + response.wind.speed + ' MPH');
@@ -71,7 +71,7 @@ $(document).ready(function() {
                   var card = $('<div>').addClass('card five-day-card col-lg-2');
                   var cardBody = $('<div>').addClass('card-body');
                   var cardTitle = $('<h5>').addClass('card-title').text(currentDate);
-                  var weatherIcon = $('<img>').attr('src', 'http://openweathermap.org/img/w/' + element.weather[0].icon + '.png');
+                  var weatherIcon = $('<img>').attr('src', 'http://openweathermap.org/img/wn/' + element.weather[0].icon + '.png');
                   var temp = $('<p>').addClass('card-text').text('Temperature: ' + element.main.temp + '°F');
                   var humidity = $('<p>').addClass('card-text').text('Humidity: ' + element.main.humidity + '%');
                   var wind = $('<p>').addClass('card-text').text('Windspeed: ' + element.wind.speed + ' MPH');

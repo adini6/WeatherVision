@@ -1,44 +1,49 @@
 body {
+    background-color: lightgray;
+    color: black;
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: gray; 
 }
 
-h1 {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 2.5rem;
-}
-
-/* search column */
+/* Left column styling */
 .col-3 {
-    background-color: #434a58; 
-    height: 100vh;
+    background-color: #d3dae7; 
     padding: 20px;
 }
 
+/* Search bar and button */
+#user-input {
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+/* City list */
 .list-group-item {
-    cursor: pointer; 
+    border: 1px solid #6c757d;
+    background-color: lightgrey;
 }
 
-/*main weather display */
+.list-group-item:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
+/* Weather display */
 .col-9 {
+    background-color: #4a6681;
     padding: 20px;
-}
-
-#city-name {
-    font-size: 1.5rem;
-    border-bottom: 1px solid #a4c0f4; 
-    margin-bottom: 20px;
-}
-
-#weather-icon {
-    width: 50px; 
-    height: 50px;
 }
 
 .five-day-card {
-    margin-top: 10px; 
+    background-color: #4a6681;
+    margin: 15px;
+    border: none;
+}
 
+#forecast-row {
+    display: flex;
+    justify-content: space-between;
 }
