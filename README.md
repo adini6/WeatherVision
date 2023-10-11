@@ -41,9 +41,11 @@ THEN I am again presented with current and future conditions for that city.
 
 ## Usage 
 
-1. Clone the repository or download the ZIP file.
-2. Open index.html in your favorite browser.
-3. Start searching for cities and get the weather updates instantly.
+1. Open [index.html](https://adini6.github.io/WeatherVision/) in your favorite browser.
+2. Start searching for cities and get the weather updates instantly.
+
+![weather vision ss](https://github.com/adini6/WeatherVision/assets/28551058/86c127db-f31f-402f-8066-54591d3b383f)
+
 
 ## License 
 
